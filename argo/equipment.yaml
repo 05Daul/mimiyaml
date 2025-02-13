@@ -4,7 +4,7 @@ metadata:
   name: equipment
   namespace: mimiproject
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       project: mimiequipment
