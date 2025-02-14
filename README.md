@@ -168,6 +168,74 @@ pipeline {
 
 ---
 
+## 🔄 GitHub Actions: YAML 파일 동기화
+
+### 📜 `push_yaml_to_repo.yml`
+```yaml
+name: Push YAML to Another Repo
+
+on:
+  push:
+    branches:
+      - Devops
+    paths:
+      - "argo/**/*.yaml"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 A 체크아웃
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Git 설정
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: 저장소 B (`mimiyaml.git`) 클론
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/05Daul/mimiyaml.git repo_b
+          cd repo_b
+          git checkout daul || git checkout -b daul
+          git pull origin daul --rebase
+
+      - name: YAML 파일 복사 및 푸시
+        run: |
+          mkdir -p repo_b/argo
+          cp -r argo/*.yaml repo_b/argo/ || echo "No YAML files to copy"
+          cd repo_b
+          git add .
+          if ! git diff --cached --exit-code; then
+            git commit -m "자동 업데이트: 저장소 A에서 YAML 파일 변경됨"
+            git push origin daul || (sleep 5 && git push origin daul)
+          else
+            echo "No changes detected, skipping push."
+          fi
+```
+
+---
+
+## ✅ 실행 및 검증 방법
+```sh
+# Kubernetes 배포
+kubectl apply -f mimi-app-service.yaml
+kubectl apply -f ingress-setting.yaml
+
+# 배포 확인
+kubectl get pods -n mimiproject
+kubectl get svc -n mimiproject
+```
+
+---
+
+
+
+---
+
 ## ✅ 실행 및 검증 방법
 ```sh
 # Kubernetes 배포
