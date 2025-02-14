@@ -1,4 +1,4 @@
-# 📌 미미-노트북 대여 시스템: 빌드 및 배포 문서
+![스크린샷 2025-02-14 180825](https://github.com/user-attachments/assets/924978a4-6ac5-4342-85aa-7e77a0011c61)# 📌 미미-노트북 대여 시스템: 빌드 및 배포 문서
 
 ![Mimi Laptop Rental](https://img.shields.io/badge/Mimi-Laptop%20Rental-blue.svg)
 
@@ -31,8 +31,13 @@
 
 
 ## 🏗️ 빌드 프로세스
+### Git Push
+![스크린샷 2025-02-14 190013](https://github.com/user-attachments/assets/c77daead-aca2-4685-ba81-0be90d613c76)
+![스크린샷 2025-02-14 190131](https://github.com/user-attachments/assets/928b4f61-4284-4ee7-b839-9b6c99bfc794)
+
 
 ### 📂 Dockerfile을 이용한 빌드
+![스크린샷 2025-02-14 182150](https://github.com/user-attachments/assets/c8cb543f-c897-46ed-8608-9926e9cc5e47)
 
 ```Dockerfile
 # Build Stage
@@ -129,6 +134,8 @@ spec:
 ---
 
 ## ⚙️ Jenkins CI/CD 파이프라인 (`Jenkinsfile`)
+![스크린샷 2025-02-14 181647](https://github.com/user-attachments/assets/d91a2967-0edf-4681-9d36-836f460e8423)
+
 ```groovy
 pipeline {
     agent any
@@ -165,6 +172,13 @@ pipeline {
     }
 }
 ```
+
+---
+## 🔄ArgoCD : 배포 자동화 
+![스크린샷 2025-02-14 180825](https://github.com/user-attachments/assets/03397350-fa81-4741-b460-5172f36a82d7)
+![스크린샷 2025-02-14 184412](https://github.com/user-attachments/assets/c5e636de-6e44-44d5-8ebc-698370dfe73b)
+![스크린샷 2025-02-14 183025](https://github.com/user-attachments/assets/5f2536fc-886b-408e-b440-9f9d4ce3fd52)
+
 
 ---
 
