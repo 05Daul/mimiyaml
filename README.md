@@ -245,9 +245,12 @@ kubectl get svc -n mimiproject
 ```
 
 ---
+---
+## 💻 전체 흐름도
 
+![단락 텍스트](https://github.com/user-attachments/assets/bd473892-2ddf-4b31-995a-7009f9a9ab1c)
 
-
+---
 ---
 
 ## ✅ 실행 및 검증 방법
