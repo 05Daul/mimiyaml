@@ -1,7 +1,3 @@
-![스크린샷 2025-02-14 180825](https://github.com/user-attachments/assets/924978a4-6ac5-4342-85aa-7e77a0011c61)# 📌 미미-노트북 대여 시스템: 빌드 및 배포 문서
-
-![Mimi Laptop Rental](https://img.shields.io/badge/Mimi-Laptop%20Rental-blue.svg)
-
 
 ---
 # 📖 2차.프로젝트 소개
@@ -92,6 +88,12 @@
    </details>
   
 ---
+
+![스크린샷 2025-02-14 180825](https://github.com/user-attachments/assets/924978a4-6ac5-4342-85aa-7e77a0011c61)# 📌 미미-노트북 대여 시스템: 빌드 및 배포 문서
+
+![Mimi Laptop Rental](https://img.shields.io/badge/Mimi-Laptop%20Rental-blue.svg)
+
+
 
 ## 📝 3차. 프로젝트 개요(ci/cd)
 
